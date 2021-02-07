@@ -27,14 +27,3 @@ function bleedingoff(ped)
 end
  
 local effect = false
-
-
-
-RegisterCommand('light', function()
-    SetEntityHealth(GetPlayerPed(-1), 180)
-end)
-
-
-RegisterCommand('fatal', function()
-    SetEntityHealth(GetPlayerPed(-1), 140)
-end)
