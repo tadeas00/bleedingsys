@@ -3,48 +3,25 @@ while true do
 Wait(0)
 local player = GetPlayerPed(-1)
 local Health = GetEntityHealth(player)
- 
-    if Health <= 180  then
-        IsPedMale(PlayerPedId(true))
-        lightbleeding(player)
- 
-        elseif Health > 181 then
-            stopbleed(player)
-        elseif Health < 142 then
-            stopbleed(player)
-    end
+local sex = GetEntityMaxHealth(player)
      
-
-    if Health <= 140  then
-        IsPedMale(PlayerPedId(true))
-        fatalbleeding(player)
- 
-        elseif Health > 141 then
-            bleedingoff(player)
-        elseif Health > 143 then
-            lightbleeding(player)
-    end
-
-    if Health <= 80  then
-        IsPedMale(PlayerPedId(false))
+    if sex == 200 and Health < 180 or sex == 175 and Health < 155 then
         lightbleeding(player)
- 
-        elseif Health > 81 then
-            stopbleed(player)
-        elseif Health < 42 then
-            stopbleed(player)
-    end
      
-
-    if Health <= 40  then
-        IsPedMale(PlayerPedId(false))
+        elseif sex == 200 and Health > 181 or sex == 175 and Health > 156  then
+            stopbleed(player)
+        elseif sex == 200 and Health < 142 or sex == 175 and Health < 132 then
+            stopbleed()
+    end
+         
+    
+    if sex == 200 and Health < 140 or sex == 175 and Health < 130 then
         fatalbleeding(player)
- 
-        elseif Health > 41 then
+     
+        elseif sex == 200 and Health > 141 or sex == 175 and Health > 131 then
             bleedingoff(player)
-        elseif Health > 43 then
+        elseif sex == 200 and Health > 143 or sex == 175 and Health > 133 then
             lightbleeding(player)
     end
 end
 end)
-
